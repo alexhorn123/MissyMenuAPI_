@@ -1,0 +1,7 @@
+/Users/alexhorn/Code/csharp/MissyMenuAPI/obj/Debug/net6.0/MissyMenuAPI.csproj.AssemblyReference.cache
+/Users/alexhorn/Code/csharp/MissyMenuAPI/obj/Debug/net6.0/MissyMenuAPI.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alexhorn/Code/csharp/MissyMenuAPI/obj/Debug/net6.0/MissyMenuAPI.AssemblyInfoInputs.cache
+/Users/alexhorn/Code/csharp/MissyMenuAPI/obj/Debug/net6.0/MissyMenuAPI.AssemblyInfo.cs
+/Users/alexhorn/Code/csharp/MissyMenuAPI/obj/Debug/net6.0/MissyMenuAPI.csproj.CoreCompileInputs.cache
+/Users/alexhorn/Code/csharp/MissyMenuAPI/obj/Debug/net6.0/MissyMenuAPI.MvcApplicationPartsAssemblyInfo.cs
+/Users/alexhorn/Code/csharp/MissyMenuAPI/obj/Debug/net6.0/MissyMenuAPI.MvcApplicationPartsAssemblyInfo.cache
