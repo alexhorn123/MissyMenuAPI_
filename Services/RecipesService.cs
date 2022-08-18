@@ -1,12 +1,13 @@
 using MissyMenuApi.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using MissyMenuAPI.Models;
 
 namespace MissyMenuApi.Services;
 
 public class RecipesService
 {
-    private readonly IMongoCollection<Recipe> _recipesCollection;
+    private readonly IMongoCollection<Recipes> _recipesCollection;
 
     public RecipesService(
         IOptions<MissyMenuDatabaseSettings> missyMenuDatabaseSettings)
@@ -17,7 +18,7 @@ public class RecipesService
         var mongoDatabase = mongoClient.GetDatabase(
             missyMenuDatabaseSettings.Value.DatabaseName);
 
-        _recipesCollection = mongoDatabase.GetCollection<Recipe>(
+        _recipesCollection = mongoDatabase.GetCollection<Recipes>(
             missyMenuDatabaseSettings.Value.RecipesCollectionName);
     }
 
@@ -25,14 +26,14 @@ public class RecipesService
         await _recipesCollection.Find(_ => true).ToListAsync();
 
     public async Task<Recipes?> GetAsync(string id) =>
-        await _recipesCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        await _recipesCollection.Find(x => x.Id.ToString() == id).FirstOrDefaultAsync();
 
-    public async Task CreateAsync(Recipe newRecipe) =>
+    public async Task CreateAsync(Recipes newRecipe) =>
         await _recipesCollection.InsertOneAsync(newRecipe);
 
-    public async Task UpdateAsync(string id, Recipe updatedRecipe) =>
-        await _recipesCollection.ReplaceOneAsync(x => x.Id == id, updatedRecipe);
+    public async Task UpdateAsync(string id, Recipes updatedRecipe) =>
+        await _recipesCollection.ReplaceOneAsync(x => x.Id.ToString() == id, updatedRecipe);
 
     public async Task RemoveAsync(string id) =>
-        await _recipesCollection.DeleteOneAsync(x => x.Id == id);
+        await _recipesCollection.DeleteOneAsync(x => x.Id.ToString() == id);
 }

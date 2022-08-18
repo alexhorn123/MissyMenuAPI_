@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
@@ -10,7 +11,7 @@ namespace MissyMenuAPI.Models;
     public class Id
     {
         [JsonPropertyName("$oid")]
-        public string Oid { get; set; }
+        public Guid Oid { get; set; }
     }
 
     public class Ingredient

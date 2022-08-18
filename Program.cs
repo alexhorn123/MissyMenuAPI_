@@ -3,7 +3,7 @@ using MissyMenuApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<BookStoreDatabaseSettings>(
+builder.Services.Configure<MissyMenuDatabaseSettings>(
     builder.Configuration.GetSection("MissyMenuDatabase"));
 
 builder.Services.AddControllers();
