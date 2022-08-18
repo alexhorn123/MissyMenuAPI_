@@ -1,4 +1,4 @@
-namespace MissyMenuApi.Models;
+namespace MissyMenuAPI.Models;
 
 public class MissyMenuDatabaseSettings
 {

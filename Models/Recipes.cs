@@ -1,33 +1,36 @@
 using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using Newtonsoft.Json;
 
 
 
 namespace MissyMenuAPI.Models;
 
 // Root myDeserializedClass = JsonSerializer.Deserialize<Recipes>(myJsonResponse);
-    public class Id
+public class Id
     {
         [JsonPropertyName("$oid")]
-        public Guid Oid { get; set; }
+        public string Oid { get; set; }
     }
 
     public class Ingredient
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
         [JsonPropertyName("measurement")]
         public string Measurement { get; set; }
 
-        [JsonPropertyName("pork is best")]
-        public string PorkIsBest { get; set; }
+        [JsonPropertyName("notes")]
+        public string Notes { get; set; }
     }
 
     public class Recipes
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         [JsonPropertyName("_id")]
         public Id Id { get; set; }
 

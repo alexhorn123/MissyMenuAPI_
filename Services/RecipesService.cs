@@ -1,9 +1,8 @@
-using MissyMenuApi.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MissyMenuAPI.Models;
 
-namespace MissyMenuApi.Services;
+namespace MissyMenuAPI.Services;
 
 public class RecipesService
 {
